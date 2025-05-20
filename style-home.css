@@ -1,0 +1,264 @@
+*,
+*::before
+*::after {
+    box-sizing: border-box;
+}
+  
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+::-webkit-scrollbar {
+    width: 10px; 
+    border-radius: 10px; 
+}
+  
+::-webkit-scrollbar-track {
+    background: transparent; 
+    border-radius: 10px; 
+}
+  
+::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px; 
+    transition: background 0.3s ease; 
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+  
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    height: 17px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.221);
+    padding: 40px 50px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    z-index: 1000;
+    transition: background-color 0.3s ease; /* Transição suave para mudança de fundo */
+}
+
+
+.navbar.scrolled {
+    background-color: #131416; /* Fundo preto com leve transparência */
+}
+
+.logo {
+    color: rgb(252, 252, 252);
+    font-size: 42px;
+    font-weight: 700;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: none;
+}
+
+.nav {
+    display: flex;
+    padding: 20px 42px;
+    width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    padding: 0;
+    gap: 24px;
+    list-style-type: none;
+    width: auto;
+}
+
+.nav-links a {
+    font-weight: 500;
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #ffffff;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.nav-links a:hover {
+    color: rgb(13, 152, 180);
+    background-color: transparent;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.menu-toggle {
+    display: none; 
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color: white;
+    z-index: 1000;
+    cursor: pointer; 
+    transition: transform 0.3s ease, color 0.3s ease; 
+}
+
+.menu-toggle:hover {
+    color: rgb(13, 152, 180); 
+    transform: scale(1.1); 
+}
+
+
+@media (min-width: 840px) {
+    .nav-links {
+        display: flex; 
+    }
+
+    .menu-toggle {
+        display: none; 
+    }
+
+    .overlay {
+        display: none; 
+    }
+}
+
+@media (max-width: 840px) {
+    .nav-links {
+        display: none; 
+        flex-direction:column; 
+        width: 100%; 
+        background-color: transparent; 
+        position: absolute;
+        top: 40px; 
+        left: 0;
+        text-align: center;
+        z-index: 1000;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block; 
+        background-color: transparent;
+        border: none;
+        font-size: 28px;
+        color: white; 
+        z-index: 1000;
+    }
+
+    .overlay {
+        display: none; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #36363649; 
+        z-index: 998; 
+        backdrop-filter: blur(10px); 
+    }
+
+    .nav-links.active + .overlay {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+.perfil {
+    list-style: none; /* Remove os marcadores de lista */
+    margin: 0;
+    padding: 100px;
+}
+
+.perfil a {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: rgb(13, 152, 180);
+    color: white;
+    text-decoration: none;
+    border-radius: 100px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 22px;
+    transition: background-color 0.3s ease;
+}
+
+.perfil a:hover {
+    background-color: #999999; /* Cor mais escura no hover */
+}
+
+.perfil a:active {
+    background-color: #999999; /* Cor quando clicado */
+    transform: translateY(1px); /* Efeito de pressionado */
+}
+
+.home {
+    width: 100%;
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('diabetes-img1.jpg'); 
+    background-size: cover; 
+    background-position: center center; 
+    background-attachment: fixed; 
+    background-repeat: no-repeat; 
+    overflow: hidden; 
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.home-content {
+    max-width: 850px; /* Largura máxima do texto */
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.681);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    line-height: 1.6;
+    transform: translateY(-20px); /* Efeito flutuante sutil */
+    transition: transform 0.3s ease;
+}
+
+.home-content:hover {
+    transform: translateY(-25px); /* Efeito ao passar o mouse */
+}
+
+.home-content p {
+    color: #333;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.home-content p::first-letter {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: rgb(13, 152, 180); /* Destaque verde para a primeira letra */
+}
+
+/* Adicione isso se quiser um ícone decorativo */
+.home-content::before {
+    content: "✚";
+    position: absolute;
+    top: -30px;
+    left: 20px;
+    font-size: 2.6rem;
+    color: rgb(13, 152, 180);
+    background: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
