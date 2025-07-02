@@ -47,12 +47,12 @@ html {
     justify-content: space-between; 
     align-items: center;
     z-index: 1000;
-    transition: background-color 0.3s ease; /* Transição suave para mudança de fundo */
+    transition: background-color 0.3s ease; 
 }
 
 
 .navbar.scrolled {
-    background-color: #131416; /* Fundo preto com leve transparência */
+    background-color: #131416; 
 }
 
 .logo {
@@ -176,7 +176,7 @@ html {
 }
 
 .perfil {
-    list-style: none; /* Remove os marcadores de lista */
+    list-style: none; 
     margin: 0;
     padding: 100px;
 }
@@ -194,12 +194,12 @@ html {
 }
 
 .perfil a:hover {
-    background-color: #999999; /* Cor mais escura no hover */
+    background-color: #999999; 
 }
 
 .perfil a:active {
-    background-color: #999999; /* Cor quando clicado */
-    transform: translateY(1px); /* Efeito de pressionado */
+    background-color: #999999; 
+    transform: translateY(1px); 
 }
 
 .home {
@@ -218,19 +218,19 @@ html {
 }
 
 .home-content {
-    max-width: 850px; /* Largura máxima do texto */
+    max-width: 850px; 
     padding: 40px;
     background-color: rgba(255, 255, 255, 0.681);
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     text-align: justify;
     line-height: 1.6;
-    transform: translateY(-20px); /* Efeito flutuante sutil */
+    transform: translateY(-20px); 
     transition: transform 0.3s ease;
 }
 
 .home-content:hover {
-    transform: translateY(-25px); /* Efeito ao passar o mouse */
+    transform: translateY(-25px); 
 }
 
 .home-content p {
@@ -242,10 +242,9 @@ html {
 .home-content p::first-letter {
     font-size: 2.8rem;
     font-weight: bold;
-    color: rgb(13, 152, 180); /* Destaque verde para a primeira letra */
+    color: rgb(13, 152, 180); 
 }
 
-/* Adicione isso se quiser um ícone decorativo */
 .home-content::before {
     content: "✚";
     position: absolute;
